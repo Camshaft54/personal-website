@@ -1,0 +1,78 @@
+body {
+	font-family: 'Century Gothic', sans-serif;
+}
+
+#page {
+	max-width: 800px;
+	margin: auto;
+}
+
+#headshot {
+    -moz-border-radius: 10px 30px; /* Firefox */
+    -webkit-border-radius: 10px 30px; /* Safari and Chrome */
+    -khtml-border-radius: 10px 30px; /* Linux browsers */
+	border-radius: 10px 30px; /* Opera 10.50, IE and CSS3 */
+	max-width: 300px;
+	margin: 30px;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 37px;
+  height: 32px;
+  text-align: center;
+  text-decoration: none;
+  -moz-border-radius: 10px 30px; /* Firefox */
+  -webkit-border-radius: 10px 30px; /* Safari and Chrome */
+  -khtml-border-radius: 10px 30px; /* Linux browsers */
+  border-radius: 10px 30px;
+  margin: 10px;
+}
+
+/* LinkedIn */
+.fa-linkedin {
+  background: #3f3f3f;
+  color: white;
+}
+
+/* GitHub */
+.fa-github {
+  background: #3f3f3f;
+  color: white;
+}
+
+/* Wikipedia */
+.fa-wikipedia-w {
+  background: #3f3f3f;
+  color: white;
+}
+
+/* Email */
+.fa-envelope {
+  background: #3f3f3f;
+  color: white;
+}
+
+#name {
+	margin: 0;
+	padding: 0;
+	font-size: 50px;
+}
+
+h2 {
+	margin: auto auto 0 auto;
+	font-weight: 400;
+	font-size: 20px;
+}
+
+h3 {
+	margin-bottom: 0;
+	font-size: 28px;
+}
+
+t, li {
+	text-align: left;
+	font-weight: 400;
+	font-size: 20px;
+}
