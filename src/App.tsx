@@ -1,18 +1,21 @@
-import './App.css'
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {Projects} from "./pages/Projects";
 import {Home} from "./pages/Home";
+import {NavBar} from "@/components/NavBar.tsx";
 
 function App() {
     return (
-        <div>
-            <BrowserRouter>
-                <Routes>
-                    <Route path="/" element={<Home />}/>
-                    <Route path="/projects" element={<Projects />}/>
-                </Routes>
-            </BrowserRouter>
-        </div>
+        <>
+            <NavBar/>
+            <div>
+                <BrowserRouter>
+                    <Routes>
+                        <Route path="/" element={<Home/>}/>
+                        <Route path="/projects" element={<Projects/>}/>
+                    </Routes>
+                </BrowserRouter>
+            </div>
+        </>
     )
 }
 
