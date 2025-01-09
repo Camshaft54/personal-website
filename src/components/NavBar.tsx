@@ -1,8 +1,8 @@
 import {Box, Flex, HStack, IconButton, Link, useDisclosure} from "@chakra-ui/react";
 import {Avatar} from "@/components/ui/avatar.tsx";
-import {useColorMode, useColorModeValue} from "@/components/ui/color-mode.tsx";
+import {ColorModeButton, useColorMode, useColorModeValue} from "@/components/ui/color-mode.tsx";
 import React from "react";
-import {MdClose, MdMenu, MdNightlightRound, MdOutlineWbSunny} from "react-icons/md";
+import {MdClose, MdMenu} from "react-icons/md";
 
 
 interface Props {
@@ -11,7 +11,7 @@ interface Props {
 }
 
 export const NavBar = () => {
-    const {colorMode, toggleColorMode} = useColorMode()
+    const {colorMode} = useColorMode()
     const {open, onToggle} = useDisclosure()
     return (
         <Box bg={useColorModeValue('gray.100', 'gray.900')}>
@@ -32,9 +32,7 @@ export const NavBar = () => {
                     </Flex>
                 </Flex>
                 <Flex justify={"end"}>
-                    <IconButton onClick={toggleColorMode} bg="none" color={useColorModeValue('black', 'white')}>
-                        {colorMode === 'light' ? <MdNightlightRound /> : <MdOutlineWbSunny />}
-                    </IconButton>
+                    <ColorModeButton/>
                 </Flex>
             </Flex>
         </Box>
