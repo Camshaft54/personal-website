@@ -1,4 +1,4 @@
-import {Box, Flex, HStack, IconButton, Link, useDisclosure} from "@chakra-ui/react";
+import {Box, Flex, HStack, IconButton, Link, Stack, useDisclosure} from "@chakra-ui/react";
 import {Avatar} from "@/components/ui/avatar.tsx";
 import {ColorModeButton, useColorMode, useColorModeValue} from "@/components/ui/color-mode.tsx";
 import React from "react";
@@ -16,15 +16,15 @@ export const NavBar = () => {
     return (
         <Box bg={useColorModeValue('gray.100', 'gray.900')}>
             <Flex h={16} align="center" px={4}>
-                <Flex display={{base: 'flex', md: 'none'}}>
+                <Flex display={{base: 'flex', sm: 'none'}}>
                     <IconButton onClick={onToggle} bg="none" color={useColorModeValue('black', 'white')}>
                         {open ? <MdClose/> : <MdMenu/>}
                     </IconButton>
                 </Flex>
-                <Flex flex={{base: 1}} justify={{base: 'center', md: 'start'}}>
+                <Flex flex={{base: 1}} justify={{base: 'center', sm: 'start'}}>
                     <Avatar src={colorMode === 'light' ? "camshaft_white.jpg" : "camshaft_black.png"} border="2px solid"
                             borderColor={useColorModeValue('gray.500', 'gray.300')}/>
-                    <Flex display={{base: 'none', md: 'flex'}} px={{base: 4}}>
+                    <Flex display={{base: 'none', sm: 'flex'}} px={{base: 4}}>
                         <HStack as='nav'>
                             <NavLink href="/">Home</NavLink>
                             <NavLink href="/projects">Projects</NavLink>
@@ -35,6 +35,13 @@ export const NavBar = () => {
                     <ColorModeButton/>
                 </Flex>
             </Flex>
+            {open ?
+                <Box display={{sm: "none"}}>
+                    <Stack as="nav">
+                        <NavLink href="/">Home</NavLink>
+                        <NavLink href="/projects">Projects</NavLink>
+                    </Stack>
+                </Box> : null}
         </Box>
     )
 }

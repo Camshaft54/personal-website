@@ -6,18 +6,16 @@ import {Footer} from "@/components/Footer.tsx";
 
 function App() {
     return (
-        <>
+        <div>
             <NavBar/>
-            <div>
-                <BrowserRouter>
-                    <Routes>
-                        <Route path="/" element={<Home/>}/>
-                        <Route path="/projects" element={<Projects/>}/>
-                    </Routes>
-                </BrowserRouter>
-            </div>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Home/>}/>
+                    <Route path="/projects" element={<Projects/>}/>
+                </Routes>
+            </BrowserRouter>
             <Footer/>
-        </>
+        </div>
     )
 }
 

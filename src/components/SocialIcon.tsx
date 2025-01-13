@@ -23,8 +23,8 @@ export const SocialIcon = (props: SocialIconProps) => {
 
 export const SocialIcons = ({size = 10}) => (
     <Flex alignItems="center">
-        <SocialIcon icon={<FaWikipediaW/>} href="/" size={size}/>
-        <SocialIcon icon={<FaLinkedinIn/>} href="/" size={size}/>
         <SocialIcon icon={<FaGithub/>} href="/" size={size}/>
+        <SocialIcon icon={<FaLinkedinIn/>} href="/" size={size}/>
+        <SocialIcon icon={<FaWikipediaW/>} href="/" size={size}/>
     </Flex>
 )

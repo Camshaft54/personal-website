@@ -1,6 +1,6 @@
 import {Flex, Heading, Image} from "@chakra-ui/react";
 import {useColorModeValue} from "@/components/ui/color-mode.tsx";
-import {SocialIcons, socialIcons} from "@/components/SocialIcon.tsx";
+import {SocialIcons} from "@/components/SocialIcon.tsx";
 
 export const AboutScreen = () => {
     return (
