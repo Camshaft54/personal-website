@@ -15,7 +15,7 @@ export const ProjectCard = (props: ProjectCardProps) => {
     const {title, children, image, link} = props;
     return (
         <Card.Root backgroundImage={`url('${image}')`} overflow="hidden" backgroundSize="cover"
-                   backgroundPosition="center" backgroundRepeat="no-repeat" m={3} h={"180px"}>
+                   backgroundPosition="center" backgroundRepeat="no-repeat" m={3}>
             <Card.Body bg={useColorModeValue("whiteAlpha.700", "blackAlpha.700")} pb={2}>
                 <Card.Title>{title}</Card.Title>
                 <Card.Description>{children}</Card.Description>
@@ -24,7 +24,7 @@ export const ProjectCard = (props: ProjectCardProps) => {
                 <Link href={link} visibility={link == undefined ? "hidden" : "visible"}>
                     <Icon boxSize={10} bg={useColorModeValue("black", "white")}
                           color={useColorModeValue("white", "black")}
-                          pb={1} rounded="30%" overflow="hidden">
+                          rounded="30%" overflow="hidden">
                         <MdLink/>
                     </Icon>
                 </Link>

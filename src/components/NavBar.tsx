@@ -28,6 +28,7 @@ export const NavBar = () => {
                         <HStack as='nav'>
                             <NavLink href="/">Home</NavLink>
                             <NavLink href="/projects">Projects</NavLink>
+                            <NavLink href="https://1drv.ms/f/s!AsANUXKFsU65hKs2b4Rt6vBLGRVMDA">Resume</NavLink>
                         </HStack>
                     </Flex>
                 </Flex>
@@ -40,6 +41,7 @@ export const NavBar = () => {
                     <Stack as="nav">
                         <NavLink href="/">Home</NavLink>
                         <NavLink href="/projects">Projects</NavLink>
+                        <NavLink href="https://1drv.ms/f/s!AsANUXKFsU65hKs2b4Rt6vBLGRVMDA">Resume</NavLink>
                     </Stack>
                 </Box> : null}
         </Box>
