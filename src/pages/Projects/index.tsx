@@ -4,8 +4,8 @@ import {ProjectCard} from "@/components/ProjectCard.tsx";
 export const Projects = () => {
     return (
         <SimpleGrid m={3} columns={{base: 1, sm: 2, md: 3}} justifyItems="center">
-            <ProjectCard title="Cryptography Research Project">
-                Working with Professor Pratyush Mishra on a decentralized auction protocol using timed commitments.
+            <ProjectCard title="Cybersecurity Research Project">
+                Working with Professor Sebastian Angel on a Private Information Retrieval protocol for databases.
             </ProjectCard>
             <ProjectCard title="REV10 Battery Management System" link="https://www.pennelectricracing.com/">
                 Developed a system that monitors temperature and voltage of each pack cell on REV10, Penn Electric
