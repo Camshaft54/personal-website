@@ -8,7 +8,7 @@
     "build": "yarn install:snippets && tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "install:snippets": "npx @chakra-ui/cli snippet add"
+    "install:snippets": "npx @chakra-ui/cli snippet add avatar checkbox close-button color-mode dialog drawer field input-group popover provider radio slider tooltip"
   },
   "dependencies": {
     "@chakra-ui/react": "^3.11.0",
@@ -16,7 +16,7 @@
     "@emotion/styled": "^11.14.0",
     "@fontsource-variable/nunito-sans": "^5.1.1",
     "framer-motion": "^12.4.10",
-    "next-themes": "^0.4.4",
+    "next-themes": "^0.4.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
