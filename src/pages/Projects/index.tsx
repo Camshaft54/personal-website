@@ -3,7 +3,7 @@ import {ProjectCard} from "@/components/ProjectCard.tsx";
 
 export const Projects = () => {
     return (
-        <SimpleGrid m={3} columns={{base: 1, sm: 2, md: 3}} justifyItems="center">
+        <SimpleGrid p={4} gap={6} columns={{base: 1, sm: 2, md: 3}} justifyItems="center">
             <ProjectCard title="Cybersecurity Research Project">
                 Working with Professor Sebastian Angel on a Private Information Retrieval protocol for databases.
             </ProjectCard>

@@ -5,10 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "yarn install:snippets && tsc -b && vite build",
+    "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "install:snippets": "npx @chakra-ui/cli snippet add avatar checkbox close-button color-mode dialog drawer field input-group popover provider radio slider tooltip"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@chakra-ui/react": "^3.11.0",

@@ -15,7 +15,7 @@ export const ProjectCard = (props: ProjectCardProps) => {
     const {title, children, image, link} = props;
     return (
         <Card.Root backgroundImage={`url('${image}')`} overflow="hidden" backgroundSize="cover"
-                   backgroundPosition="center" backgroundRepeat="no-repeat" m={3}>
+                   backgroundPosition="center" backgroundRepeat="no-repeat" display="flex" flexDirection="column" width="100%">
             <Card.Body bg={useColorModeValue("whiteAlpha.700", "blackAlpha.700")} pb={2}>
                 <Card.Title>{title}</Card.Title>
                 <Card.Description>{children}</Card.Description>
