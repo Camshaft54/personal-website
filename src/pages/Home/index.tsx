@@ -9,8 +9,8 @@ export const Home = () => {
             <Container px={{ base: 12, md: 60}} justifyItems="center" centerContent={true} alignItems="center" py={4}>
                 <Text>
                     <Heading fontSize={"3xl"}>Hi!</Heading>
-                    I'm a sophomore pursuing a B.S.E. in Computer Science at the University of Pennsylvania.
-                    I'm passionate about AI/ML, cybersecurity, and data science.
+                    I'm a junior pursuing a B.S.E. in Computer Science at the University of Pennsylvania.
+                    I'm passionate about AI/ML, cybersecurity, and systems.
                 </Text>
             </Container>
         </Flex>
