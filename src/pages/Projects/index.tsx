@@ -4,6 +4,12 @@ import {ProjectCard} from "@/components/ProjectCard.tsx";
 export const Projects = () => {
     return (
         <SimpleGrid p={4} gap={6} columns={{base: 1, sm: 2, md: 3}} justifyItems="center">
+            <ProjectCard title="Arrivo" link="https://arrivo.cameronshaw.me/">
+                A Jetpack Compose Android app for tracking Amtrak trains in realtime. Includes custom logic for unofficial Amtrak APIs, home screen widget, and more. Available on the Google Play Store.
+            </ProjectCard>
+            <ProjectCard title="Estonia QBS Data Analysis" link="https://github.com/Camshaft54/Estonia-QBS-Data-Analysis">
+                Conducted an analysis of Estonia's Quality Bonus System (QBS) for primary care to evaluate its effectiveness for my REES 1670 final project.
+            </ProjectCard>
             <ProjectCard title="Cybersecurity Research Project">
                 Working with Professor Sebastian Angel on a Private Information Retrieval protocol for databases.
             </ProjectCard>
