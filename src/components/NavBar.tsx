@@ -7,7 +7,8 @@ import {Link as RouterLink} from "react-router-dom";
 
 interface Props {
     children: React.ReactNode,
-    href: string
+    href: string,
+    target?: string
 }
 
 export const NavBar = () => {
@@ -40,7 +41,7 @@ export const NavBar = () => {
                         <HStack as='nav'>
                             <NavLink href="/">Home</NavLink>
                             <NavLink href="/projects">Projects</NavLink>
-                            <NavLink href="https://1drv.ms/f/s!AsANUXKFsU65hKs2b4Rt6vBLGRVMDA">Resume</NavLink>
+                            <NavLink href="/resume.pdf" target="_blank">Resume</NavLink>
                         </HStack>
                     </Flex>
                 </Flex>
@@ -53,7 +54,7 @@ export const NavBar = () => {
                     <Stack as="nav">
                         <NavLink href="/">Home</NavLink>
                         <NavLink href="/projects">Projects</NavLink>
-                        <NavLink href="https://1drv.ms/f/s!AsANUXKFsU65hKs2b4Rt6vBLGRVMDA">Resume</NavLink>
+                        <NavLink href="/resume.pdf" target="_blank">Resume</NavLink>
                     </Stack>
                 </Box> : null}
         </Box>
@@ -61,8 +62,9 @@ export const NavBar = () => {
 }
 
 const NavLink = (props: Props) => {
-    const {href, children} = props
-    const isExternal = href.startsWith('http');
+    const {href, children, target} = props;
+    // Route external links and PDFs to a standard <a> tag
+    const isExternal = href.startsWith('http') || href.endsWith('.pdf');
 
     return (
         <Link
@@ -74,6 +76,8 @@ const NavLink = (props: Props) => {
                 textDecoration: 'none',
                 bg: useColorModeValue('gray.200', 'gray.700'),
             }}
+            target={target}
+            rel={target === "_blank" ? "noopener noreferrer" : undefined}
             {...(isExternal ? { href } : { to: href })}
         >
             {children}
