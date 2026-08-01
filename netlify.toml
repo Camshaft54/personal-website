@@ -15,3 +15,8 @@
       </camshaft_white.jpg>; rel=preload; as=image,
       </headshot.webp>; rel=preload; as=image
     '''
+
+[[headers]]
+  for = "/resume.pdf"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
