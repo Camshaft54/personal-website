@@ -1,9 +1,9 @@
 import {Box, Flex, HStack, IconButton, Link, Stack, useDisclosure} from "@chakra-ui/react";
 import {Avatar} from "@/components/ui/avatar.tsx";
-import {ColorModeButton, useColorMode, useColorModeValue} from "@/components/ui/color-mode.tsx";
+import {ColorModeButton, useColorModeValue} from "@/components/ui/color-mode.tsx";
 import React from "react";
 import {MdClose, MdMenu} from "react-icons/md";
-
+import {Link as RouterLink} from "react-router-dom";
 
 interface Props {
     children: React.ReactNode,
@@ -11,7 +11,6 @@ interface Props {
 }
 
 export const NavBar = () => {
-    const {colorMode} = useColorMode()
     const {open, onToggle} = useDisclosure()
     return (
         <Box bg={useColorModeValue('gray.100', 'gray.900')}>
@@ -22,8 +21,21 @@ export const NavBar = () => {
                     </IconButton>
                 </Flex>
                 <Flex flex={{base: 1}} justify={{base: 'center', sm: 'start'}}>
-                    <Avatar src={colorMode === 'light' ? "camshaft_white.jpg" : "camshaft_black.png"} border="2px solid"
-                            borderColor={useColorModeValue('gray.500', 'gray.300')}/>
+                    <Avatar
+                        src="camshaft_white.jpg"
+                        border="2px solid"
+                        borderColor="gray.500"
+                        display="inline-flex"
+                        _dark={{ display: "none" }}
+                    />
+
+                    <Avatar
+                        src="camshaft_black.png"
+                        border="2px solid"
+                        borderColor="gray.300"
+                        display="none"
+                        _dark={{ display: "inline-flex" }}
+                    />
                     <Flex display={{base: 'none', sm: 'flex'}} px={{base: 4}}>
                         <HStack as='nav'>
                             <NavLink href="/">Home</NavLink>
@@ -50,10 +62,11 @@ export const NavBar = () => {
 
 const NavLink = (props: Props) => {
     const {href, children} = props
+    const isExternal = href.startsWith('http');
 
     return (
         <Link
-            as="a"
+            as={isExternal ? "a" : RouterLink}
             px={2}
             py={1}
             rounded={'md'}
@@ -61,7 +74,8 @@ const NavLink = (props: Props) => {
                 textDecoration: 'none',
                 bg: useColorModeValue('gray.200', 'gray.700'),
             }}
-            href={href}>
+            {...(isExternal ? { href } : { to: href })}
+        >
             {children}
         </Link>
     )

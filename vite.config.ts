@@ -1,27 +1,19 @@
 import {defineConfig} from 'vite'
-import react from '@vitejs/plugin-react-swc'
-import tsconfigPaths from "vite-tsconfig-paths"
+import react from '@vitejs/plugin-react'
+import {ViteImageOptimizer} from "vite-plugin-image-optimizer";
 
 // https://vite.dev/config/
 export default defineConfig({
     publicDir: 'public',
-    build: {
-        outDir: 'dist',
-        rollupOptions: {
-            output: {
-                manualChunks: {
-                    vendor: [
-                        'react',
-                        'react-dom',
-                        '@chakra-ui/react',
-                        'next-themes',
-                        'framer-motion',
-                        'react-router-dom',
-                        'react-icons'
-                    ]
-                }
-            }
-        }
+    resolve: {
+        tsconfigPaths: true
     },
-    plugins: [react(), tsconfigPaths()],
+    plugins: [
+        react(),
+        ViteImageOptimizer({
+            png: { quality: 80 },
+            jpg: { quality: 80 },
+            webp: { quality: 80 },
+        })
+    ],
 })

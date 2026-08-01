@@ -40,3 +40,5 @@ export const Projects = () => {
         </SimpleGrid>
     )
 }
+
+export default Projects;

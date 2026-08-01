@@ -1,34 +1,85 @@
-import {Card, Icon, Link} from "@chakra-ui/react"
-
+import { Card, HStack, Link, Box } from "@chakra-ui/react";
 import React from "react";
-import {useColorModeValue} from "@/components/ui/color-mode.tsx";
-import {MdLink} from "react-icons/md";
+import { useColorModeValue } from "@/components/ui/color-mode.tsx";
 
 interface ProjectCardProps {
-    title: string,
-    children: React.ReactNode,
-    image?: string,
-    link?: string
+    title: string;
+    children: React.ReactNode;
+    image?: string;
+    link?: string;
 }
 
-export const ProjectCard = (props: ProjectCardProps) => {
-    const {title, children, image, link} = props;
+const cardLayoutProps = {
+    overflow: "hidden",
+    bgSize: "cover",
+    bgPos: "center",
+    bgRepeat: "no-repeat",
+    display: "flex",
+    flexDirection: "column",
+    width: "100%",
+    borderWidth: "1px",
+    transition: "all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1)"
+};
+
+const cardBodyProps = {
+    p: 5,
+    minH: "160px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between"
+};
+
+export const ProjectCard = ({ title, children, image, link }: ProjectCardProps) => {
+    const borderColor = useColorModeValue("blackAlpha.200", "whiteAlpha.300");
+    const bodyBg = useColorModeValue("whiteAlpha.800", "blackAlpha.800");
+    const hoverShadow = useColorModeValue("xl", "dark-lg");
+
     return (
-        <Card.Root backgroundImage={`url('${image}')`} overflow="hidden" backgroundSize="cover"
-                   backgroundPosition="center" backgroundRepeat="no-repeat" display="flex" flexDirection="column" width="100%">
-            <Card.Body bg={useColorModeValue("whiteAlpha.700", "blackAlpha.700")} pb={2}>
-                <Card.Title>{title}</Card.Title>
-                <Card.Description>{children}</Card.Description>
-            </Card.Body>
-            <Card.Footer justifyContent="flex-end" bg={useColorModeValue("whiteAlpha.700", "blackAlpha.700")}>
-                <Link href={link} visibility={link == undefined ? "hidden" : "visible"}>
-                    <Icon boxSize={10} bg={useColorModeValue("black", "white")}
-                          color={useColorModeValue("white", "black")}
-                          rounded="30%" overflow="hidden">
-                        <MdLink/>
-                    </Icon>
-                </Link>
-            </Card.Footer>
-        </Card.Root>
-    )
-}
+        <Link
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            w="100%"
+            _hover={{ textDecoration: "none" }}
+            pointerEvents={link ? "auto" : "none"}
+        >
+            <Card.Root
+                {...cardLayoutProps}
+                bgImage={`url('${image}')`}
+                cursor={link ? "pointer" : "default"}
+                borderColor={borderColor}
+                _hover={{
+                    transform: "translateY(-4px) scale(1.01)",
+                    boxShadow: hoverShadow,
+                }}
+                _active={{
+                    transform: "scale(0.97)",
+                    opacity: 0.9,
+                }}
+            >
+                <Card.Body {...cardBodyProps} bg={bodyBg}>
+                    <Box>
+                        <HStack justify="space-between" align="flex-start" mb={2}>
+                            <Card.Title fontSize="xl">{title}</Card.Title>
+                        </HStack>
+                        <Card.Description>{children}</Card.Description>
+                    </Box>
+
+                    {link && (
+                        <Box
+                            as="span"
+                            display="block"
+                            fontSize="xs"
+                            fontWeight="semibold"
+                            letterSpacing="wider"
+                            mt={4}
+                            opacity={0.75}
+                        >
+                            View Project →
+                        </Box>
+                    )}
+                </Card.Body>
+            </Card.Root>
+        </Link>
+    );
+};

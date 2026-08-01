@@ -4,3 +4,14 @@
 
 [build.environment]
   NODE_VERSION = "20"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Link = '''
+      </BlissDay.webp>; rel=preload; as=image,
+      </BlissNight.webp>; rel=preload; as=image,
+      </camshaft_black.png>; rel=preload; as=image,
+      </camshaft_white.jpg>; rel=preload; as=image,
+      </headshot.webp>; rel=preload; as=image
+    '''
